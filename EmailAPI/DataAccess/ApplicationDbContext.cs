@@ -1,4 +1,5 @@
 ﻿using EmailAPI.Models;
+using EmailAPI.TokenAuth;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmailAPI.DataAccess
@@ -10,5 +11,6 @@ namespace EmailAPI.DataAccess
     }
 
     public DbSet<EmailRecord> Records { get; set; }
+    public DbSet<Token> Tokens { get; set; }
   }
 }

@@ -1,10 +1,11 @@
 using EmailService;
 using EmailAPI.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-
 
 // Add services to the container.
 // Add MySQL database service
@@ -60,7 +61,16 @@ builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+  options.AddSecurityDefinition("auth", new OpenApiSecurityScheme
+  {
+    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+    In = ParameterLocation.Header,
+    Name = "Authorization",
+    Type = SecuritySchemeType.ApiKey
+  });
+});
 
 // Allows any origin, header, methods
 builder.Services.AddCors(policy =>

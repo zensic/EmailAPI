@@ -1,14 +1,17 @@
 ﻿using EmailAPI.DataAccess;
+using EmailAPI.Filters;
 using EmailAPI.Models;
 using EmailService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MimeKit;
 
 namespace EmailAPI.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
+  [TokenAuthFilter]
   public class MailController : ControllerBase
   {
     private readonly ApplicationDbContext _context;
@@ -40,6 +43,15 @@ namespace EmailAPI.Controllers
       }
 
       return Ok();
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllMail()
+    {
+      // Grab list of all emails
+      var emailList = await _context.Records.ToListAsync();
+
+      return Ok(emailList);
     }
   }
 }
