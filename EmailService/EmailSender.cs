@@ -35,11 +35,11 @@ namespace EmailService
     private MimeMessage CreateEmailMessage(Message message)
     {
       var emailMessage = new MimeMessage();
-      emailMessage.From.Add(new MailboxAddress("email", _emailConfig.From));
+      emailMessage.From.Add(new MailboxAddress("totally not a bot", _emailConfig.From));
       emailMessage.To.AddRange(message.To);
       emailMessage.Subject = message.Subject;
 
-      var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<div{0}</div>", message.Content) };
+      var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<div>{0}</div>", message.Content) };
 
       emailMessage.Body = bodyBuilder.ToMessageBody();
       return emailMessage;

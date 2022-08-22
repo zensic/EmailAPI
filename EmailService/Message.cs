@@ -18,7 +18,7 @@ namespace EmailService
     {
       To = new List<MailboxAddress>();
 
-      To.AddRange(to.Select(x => new MailboxAddress("emailAPI", x)));
+      To.AddRange(to.Select(x => new MailboxAddress("email API", x)));
       Subject = subject;
       Content = content;
     }
