@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailAPI", "EmailAPI\EmailAPI.csproj", "{0A57B8AC-7374-4958-A78A-F791CD964E7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{91375F8D-14D3-4744-8018-6F0F3D85BEA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A57B8AC-7374-4958-A78A-F791CD964E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A57B8AC-7374-4958-A78A-F791CD964E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A57B8AC-7374-4958-A78A-F791CD964E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A57B8AC-7374-4958-A78A-F791CD964E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91375F8D-14D3-4744-8018-6F0F3D85BEA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91375F8D-14D3-4744-8018-6F0F3D85BEA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91375F8D-14D3-4744-8018-6F0F3D85BEA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91375F8D-14D3-4744-8018-6F0F3D85BEA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9792ABDE-2666-4D07-B2AC-3A682E9597DC}
+	EndGlobalSection
+EndGlobal
