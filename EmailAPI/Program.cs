@@ -3,6 +3,7 @@ using EmailAPI.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 using Microsoft.OpenApi.Models;
+using EmailAPI.TokenAuth;
 
 var builder = WebApplication.CreateBuilder(args);
 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -71,6 +72,9 @@ builder.Services.AddSwaggerGen(options =>
     Type = SecuritySchemeType.ApiKey
   });
 });
+
+// Add token manager
+builder.Services.AddScoped<ITokenManager, TokenManager>();
 
 // Allows any origin, header, methods
 builder.Services.AddCors(policy =>
