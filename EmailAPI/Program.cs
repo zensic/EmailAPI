@@ -62,16 +62,7 @@ builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-  options.AddSecurityDefinition("auth", new OpenApiSecurityScheme
-  {
-    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
-    In = ParameterLocation.Header,
-    Name = "Authorization",
-    Type = SecuritySchemeType.ApiKey
-  });
-});
+builder.Services.AddSwaggerGen();
 
 // Add token manager
 builder.Services.AddScoped<ITokenManager, TokenManager>();
