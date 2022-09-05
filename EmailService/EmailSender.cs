@@ -37,11 +37,12 @@ namespace EmailService
       var emailMessage = new MimeMessage();
       emailMessage.From.Add(new MailboxAddress("totally not a bot", _emailConfig.From));
       emailMessage.To.AddRange(message.To);
+      emailMessage.Cc.AddRange(message.Cc);
       emailMessage.Subject = message.Subject;
 
       var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<div>{0}</div>", message.Content) };
-
       emailMessage.Body = bodyBuilder.ToMessageBody();
+
       return emailMessage;
     }
 
