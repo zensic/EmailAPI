@@ -18,6 +18,7 @@ namespace EmailService
     public Message(IEnumerable<string> to, IEnumerable<string> cc, string subject, string content)
     {
       To = new List<MailboxAddress>();
+      Cc = new List<MailboxAddress>();
 
       To.AddRange(to.Select(x => new MailboxAddress("email API", x)));
       Cc.AddRange(cc.Select(x => new MailboxAddress("email API", x)));
